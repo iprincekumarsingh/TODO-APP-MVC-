@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class UserModel extends Model
 {
     use HasFactory;
-    protected $table="user";
-    protected $primaryKey="nid";
+    protected $table = "users";
+    protected $primaryKey = "uid";
+
+    public function getDatau()
+    {
+        return $this->hasOne('App\Models\Note');
+    }
 }
